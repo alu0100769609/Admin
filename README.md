@@ -16,7 +16,7 @@ Así entre tildes invertidas
 
 *** Así con 3 asteriscos
 
--Así con guión
+- Así con guión
 
 *Así entre un asterisco*
 
