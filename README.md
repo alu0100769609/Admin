@@ -17,6 +17,7 @@ Así entre tildes invertidas
 *** Así con 3 asteriscos
 
 - Así con guión
+	- Así con un guión identado
 
 *Así entre un asterisco*
 
