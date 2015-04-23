@@ -579,6 +579,9 @@ h3 {
   color: #b6b6b6;
 }
 
+.vrtcl {
+  vertical-align:middle;
+}
 a {
   color: #ffcc00;
   font-weight: 400;

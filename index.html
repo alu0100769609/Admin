@@ -34,34 +34,67 @@
         </div>
         <hr>
         <p class="centrado">
-          <img src="images/flecha-derecha.png" alt="Esto es un texto alternativo" title="gatito nuevo">
+          <img class="vrtcl" src="images/flecha-derecha.png" alt="Esto es un texto alternativo" title="">
           <a href="../Instalacion-Admin" target="_blank" title="Click here :D">Instalación y configuración previa a la práctica</a>
-          <img src="images/flecha-izquierda.png" alt="Esto es un texto alternativo" title="gatito nuevo">
+          <img class="vrtcl" src="images/flecha-izquierda.png" alt="Esto es un texto alternativo" title="">
         </p>
         <hr>
         <h2>Primeros pasos</h2>
-        <pre>
-CREAR TODOS LOS USUARIOS
- -Pinchamos tecla de windows
-  -Abrimos usuarios y equipos (páginas amarillas)
-   -Expandimos nuestro dominio (as06)
-    -Botón derecho en nuestro dominio
-     -Nuevo
-      -Unidad Organizativa
-      -Ponemos nombre(para guardar los usuarios en ella)
-    -Entramos en la ou nueva que creamos
-     -Personita cegada por el sol
-      -Nombre: emple1
-      -Nombre inicio sesión: emple1
-      -Siguiente
-      -password: emple1
-      -Desmarcamos casilla cambio de clave cada vez
-       que accede
-      -Siguiente
-      -Finalizar
-  </pre>
+        <p>
+          Antes de comenzar los apartados de la práctica será necesario que nos
+          creemos los usuarios del sistema. Para ello vamos a inicio (esquina inferior izquierda o tecla windows
+          <img class="vrtcl" src="images/inicio.png" title="Inicio">), y hacemos clic en
+          Usuarios y equipos <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">.
+          Expandimos <em><code>Usuarios y equipos de Active Directory</code></em>, botón derecho en el dominio (as06) y creamos una nueva
+          unidad organizativa. Esta se usará para guardar los usuarios.
+        </p>
+        <div class="centrado">
+          <img src="images/OU.png" title=" Creamos unidad organizativa">
+        </div>
+        <p>
+          A continuación entramos en la nueva unidad organizativa y creamos tantos usuarios como nos piden.
+        </p>
+        <div class="centrado">
+          <img src="images/crear-usuarios.png" title=" Creamos usuarios">
+        </div>
+        <p>
 
-        <h2>Restringir horas de acceso</h2>
+
+        <h2>Sistema: Restringir horas de acceso</h2>
+        <p>
+          Para restringir las horas de acceso a los usuarios vamos a inicio (esquina inferior izquierda o tecla windows
+          <img class="vrtcl" src="images/inicio.png" title="Inicio">), y hacemos clic en
+          Administrador de directivas <img class="vrtcl" src="images/btnAdD.png" title="Administrador de Directivas">.
+          Expandimos nuestro dominio y hacemos botón derecho en <em><code>Default domain policy</code></em> y editamos.
+        </p>
+        <div class="centrado">
+          <img src="images/AdD.png" title="Administrador de Directivas">
+        </div>
+        <p>
+          A continuación, en la nueva ventana vamos a <em><code>Directivas</code><img class="vrtcl" src="images/flecha-derecha-2.png">
+          </em><em><code>Configuración de windows</code></em><img class="vrtcl" src="images/flecha-derecha-2.png">
+          <em><code>Configuración de seguridad</code></em><img class="vrtcl" src="images/flecha-derecha-2.png">
+          <em><code>Directivas de kerberos</code></em>, y ahí habilitamos las restricciones de inicio de sesión si no lo están
+        </p>
+        <div class="centrado">
+          <img class="vrtcl" src="images/EdD.png" title="Editor de Directivas">
+        </div>
+        <p>
+
+
+          <h2>Contraseñas</h2>
+        </p>
+
+        <h2>Directorio privado de usuario</h2>
+
+        <h2>Proyectos de la organización</h2>
+
+        <h2>Usuarios de la organización</h2>
+
+        <h2>Directores de los proyectos</h2>
+
+        <h2>Información compartida</h2>
+
           <code>Así entre tildes invertidas</code>
         </pre>
         <ul>
