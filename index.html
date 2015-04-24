@@ -30,37 +30,44 @@
     <div class="wrapper">
       <section>
         <div class="centrado">
-          <h1 class="verdefuerte">Práctica 3 de Administración de Sistemas</h1>
-          <h3 class="verdefuerte">Usuarios y protección en windows 2012</h3>
+          <h1>Práctica 3 de Administración de Sistemas</h1>
+          <h3>Usuarios y protección en windows 2012</h3>
         </div>
         <hr>
         <p class="centrado">
-          <img class="vrtcl" src="images/flecha-derecha.png" alt="Esto es un texto alternativo" title="">
+          <img class="vrtcl" src="images/flecha-derecha.png" title="">
           <a href="../Instalacion-Admin" target="_blank" title="Click here :D">Instalación y configuración previa a la práctica</a>
-          <img class="vrtcl" src="images/flecha-izquierda.png" alt="Esto es un texto alternativo" title="">
+          <img class="vrtcl" src="images/flecha-izquierda.png" title="">
         </p>
         <hr>
-        <h2>Primeros pasos</h2>
-        <p>
-          Antes de comenzar los apartados de la práctica será necesario que nos
-          creemos los usuarios del sistema. Para ello vamos a inicio (esquina inferior izquierda o tecla windows
-          <img class="vrtcl" src="images/inicio.png" title="Inicio">), y hacemos clic en
-          Usuarios y equipos <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">.
-          Expandimos <em><code>Usuarios y equipos de Active Directory</code></em>, botón derecho en el dominio (as06) y creamos una nueva
-          unidad organizativa. Esta se usará para guardar los usuarios.
-        </p>
-        <div class="centrado">
-          <img src="images/OU.png" title=" Creamos unidad organizativa">
-        </div>
-        <p>
-          A continuación entramos en la nueva unidad organizativa y creamos tantos usuarios como nos piden.
-        </p>
-        <div class="centrado">
-          <img src="images/crear-usuarios.png" title=" Creamos usuarios">
-        </div>
-        <p>
+        <p class="centrado"><a href="#final" title="Ir al final">Saltar al final de la página</a></p>
 
 
+<!--PRIMEROS PASOS-->
+        <p>
+          <h2>Primeros pasos</h2>
+          <p>
+            Antes de comenzar los apartados de la práctica será necesario que nos
+            creemos los usuarios del sistema. Para ello vamos a inicio (esquina inferior izquierda o tecla windows
+            <img class="vrtcl" src="images/inicio.png" title="Inicio">), y hacemos clic en
+            Usuarios y equipos <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">.
+            Expandimos <em><code>Usuarios y equipos de Active Directory</code></em>, botón derecho en el dominio (as06) y creamos una nueva
+            unidad organizativa. Esta se usará para guardar los usuarios.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/OU.png" title=" Creamos unidad organizativa">
+          </div>
+          <p>
+            A continuación entramos en la nueva unidad organizativa y creamos tantos usuarios como nos piden.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/crear-usuarios.png" title=" Creamos usuarios">
+          </div>
+        </p>
+
+
+<!--HORAS DE ACCESO-->
+        <p>
         <h2>Sistema: Restringir horas de acceso</h2>
         <p>
           Para restringir las horas de acceso a los usuarios vamos a inicio (esquina inferior izquierda o tecla windows
@@ -69,7 +76,7 @@
           Expandimos nuestro dominio y hacemos botón derecho en <em><code>Default domain policy</code></em> y editamos.
         </p>
         <div class="centrado">
-          <img src="images/AdD.png" title="Administrador de Directivas">
+          <img src="images/importantes/AdD.png" title="Administrador de Directivas">
         </div>
         <p>
           A continuación, en la nueva ventana vamos a <em><code>Directivas</code><img class="vrtcl" src="images/flecha-derecha-2.png">
@@ -78,23 +85,67 @@
           <em><code>Directivas de kerberos</code></em>, y ahí habilitamos las restricciones de inicio de sesión si no lo están
         </p>
         <div class="centrado">
-          <img class="vrtcl" src="images/EdD.png" title="Editor de Directivas">
+          <img src="images/importantes/EdD.png" title="Editor de Directivas">
         </div>
+
+
+<!--CONTRASEÑAS-->
         <p>
-
-
           <h2>Contraseñas</h2>
+          <p>
+            Para las contraseñas, tuvimos que haberle asignado al principio una a cada usuario y ésta debía ser su nombre de usuario.
+            Ahora debemos especificar cómo deben ser las contraseñas y cada cuánto tiempo deben cambiar para que sea él mismo
+            el que la cambie periódicamente.
+          </p>
+          <p>
+            Nos dirigimos a Directivas de contraseña y cambiamos la longitud mínima de la contraseña, ponemos 90 días de vigencia
+            máxima de la contraseña y 14 días mínima. Desmarcamos los requisitos de complejidad y exigimos un historial de 2 contraseñas,
+            para que el usuario esté obligado a cambiar a un mínimo de 3 contraseñas diferentes.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/DdC.png" title="Directivas de contraseña">
+          </div>
+          <p>
+            Por último si el usuario se equivoca 4 veces seguidas en la contraseña en un intervalo de 10 minutos, se la bloqueamos
+            permanentemente. Para ello nos dirigimos a directivas de bloqueo de contraseña (debajo de directivas de contraseña) y
+            le asignamos una duración de bloqueo de cuenta de "0" para que se quede bloqueada permanente, una duración de bloqueo
+            después de "10 minutos" y el umbral de bloqueo de cuenta lo ponemos a 4 intentos.
+            <div class="centrado">
+              <img src="images/importantes/DdBdC.png" title="Directivas de bloqueo de cuenta">
+            </div>
+          </p>
         </p>
 
-        <h2>Directorio privado de usuario</h2>
 
-        <h2>Proyectos de la organización</h2>
+<!--DIRECTORIO PRIVADO DE USUARIO-->
+        <p>
+          <h2>Directorio privado de usuario</h2>
+        </p>
 
-        <h2>Usuarios de la organización</h2>
 
-        <h2>Directores de los proyectos</h2>
+<!--PROYECTOS DE LA ORGANIZACIÓN-->
+        <p>
+          <h2>Proyectos de la organización</h2>
+        </p>
 
-        <h2>Información compartida</h2>
+
+<!--USUARIOS DE LA ORGANIZACIÓN-->
+        <p>
+          <h2>Usuarios de la organización</h2>
+        </p>
+
+
+<!--DIRECTORES DE LOS PROYECTOS-->
+        <p>
+          <h2>Directores de los proyectos</h2>
+        </p>
+
+
+<!--INFORMACIÓN COMPARTIDA-->
+        <p>
+          <h2>Información compartida</h2>
+        </p>
+
 
           <code>Así entre tildes invertidas</code>
         </pre>
@@ -118,12 +169,12 @@
         <blockquote>
           <p> Este texto aparece dentro de un elemento HTML de nosequé...</p>
         </blockquote>
-        <p><a href="https://www.google.es" title="Vamos a google">Esto es un enlace que lleva a google</a></p>
         <p><a href="https://www.google.es" target="_blank"><img src="images/gatito.png" alt="Esto es un texto alternativo" title="gatito nuevo"></a>
         No se qué más poner... así que así se queda, si algún cambio más, se hace en gh-pages</p>
 
 
-        <!-- Pie de página -->
+<!-- Pie de página -->
+        <p class="centrado"><a href="#" title="Volver arriba">Volver al principio</a></p>
         <hr>
         <div id="title">
           <span class="credits left">Project maintained by <a href="https://github.com/alu0100769609">alu0100769609</a></span>
@@ -132,5 +183,6 @@
       </section>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <a name="final"> <!-- Etiqueta de final de página-->
   </body>
 </html>
