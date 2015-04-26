@@ -120,6 +120,45 @@
 <!--DIRECTORIO PRIVADO DE USUARIO-->
         <p>
           <h2>Directorio privado de usuario</h2>
+          <p>
+            Ahora tenemos que crear los directorios de nuestros usuarios en el servidor, en una carpeta /home que crearemos en
+            el disco c. A continuación botón derecho el la carpeta, <em><code>Propiedades</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CreaHome.png" title="Creamos el directorio /home">
+          </div>
+          <p>
+            Vamos a la pestaña <em><code>Compartir</code></em> y pulsamos en <em><code>Compartir...</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompHome.png" title="Compartir el directorio /home">
+          </div>
+          <p>
+            En la ventana nueva que se nos abre no tocamos nada, simplemente pinchamos <em><code>Compartir</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompHome2.png" title="Compartir el directorio /home">
+          </div>
+          <p>
+            Listo. Ahora sólo debemos ir a la pestaña de seguridad y pinchar en <em><code>Editar...</code></em> para agregar
+            a los empleados <em><code>(Usuarios del dominio)</code></em> y que ellos puedan acceder a la carpeta /home
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompSegu.png" title="Seguridad /home">
+          </div>
+          <p>
+            Por último debemos decirle a cada usuario que debe conectarse a esa carpeta. Para ello volvemos a
+            <em><code>Usuarios y equipos</code></em><img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Organización</code></em> y damos doble clic en cada
+            empleado <img class="vrtcl" src="images/flecha-derecha-2.png"> <em><code>perfil</em></code> <img class="vrtcl" src="images/flecha-derecha-2.png">
+            <em><code>conectar a N en \\ORD06\home\%username%</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/ConectUsu.png" title="Conectar a \\ORD06\home\%username%">
+          </div>
+          <p>
+            Ahora podemos iniciar una sesión en el ordenador cliente y comprobar que todo funciona correctamente.
+          </p>
         </p>
 
 
@@ -146,7 +185,7 @@
           <h2>Información compartida</h2>
         </p>
 
-
+<!--BASURA-->
           <code>Así entre tildes invertidas</code>
         </pre>
         <ul>
@@ -171,7 +210,7 @@
         </blockquote>
         <p><a href="https://www.google.es" target="_blank"><img src="images/gatito.png" alt="Esto es un texto alternativo" title="gatito nuevo"></a>
         No se qué más poner... así que así se queda, si algún cambio más, se hace en gh-pages</p>
-
+<!--FIN DE BASURA-->
 
 <!-- Pie de página -->
         <p class="centrado"><a href="#" title="Volver arriba">Volver al principio</a></p>
@@ -181,8 +220,12 @@
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
       </section>
+      <div class="flecha">
+        <a onClick="arriba();" class="arrowtop"></a>
+      </div>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     <a name="final"> <!-- Etiqueta de final de página-->
+
   </body>
 </html>
