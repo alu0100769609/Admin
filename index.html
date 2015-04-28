@@ -165,6 +165,184 @@
 <!--PROYECTOS DE LA ORGANIZACIÓN-->
         <p>
           <h2>Proyectos de la organización</h2>
+          <p>
+            Para los proyectos de la organización crearemos una carpeta dentrod el disco c llamada <em><code>proyectos</code></em>
+            y la compartiremos igual que como compartimos la carpeta <em><code>/home</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearProy.png" title="Crear la carpeta de proyecto">
+          </div>
+          <p>
+            Vamos a la pestaña <em><code>Compartir</code></em> y pulsamos en <em><code>Compartir...</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompProy.png" title="Compartir el directorio /proyectos">
+          </div>
+          <p>
+            En la ventana nueva que se nos abre no tocamos nada, simplemente pinchamos <em><code>Compartir</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompHome2.png" title="Compartir el directorio /proyectos">
+          </div>
+          <p>
+            Sin cerrar las propiedades, vamos a seguridad y agregamos los "usuarios del dominio"
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/SeguProy.png" title="Seguridad">
+          </div>
+          <p>
+            Pero com debe aplicarse únicamente a esta carpeta, editamos "usuarios del dominio" y se lo especificamos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/SeguProy2.png" title="Opciones avanzadas">
+          </div>
+          <p>
+            Aplicamos únicamente a esta carpeta y aceptamos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/SeguProy3.png" title="Editar permisos">
+          </div>
+          <p>
+            Ahora ya tenemos creada y compartida nuestra carpeta de proyectos, pero tenemos que crear los proyectos.
+            Creamos 3 subcarpetas dentro de <em><code>/proyectos</code></em>: <em><code>auditorio</code></em>,
+            <em><code>aeropuerto</code></em>y<em><code>parque</code></em>. Por el momento no las compartiremos, porque
+            ahora no queremos que todos los usuarios puedan acceder a la carpeta, sólo los que trabajen en dicho proyecto.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/3proyectos.png" title="Creamos las 3 carpetas de proyectos">
+          </div>
+          <p>
+            Para conseguirlo, primero debemos crear grupos de proyectos que engloben a todos los empleados que trabajan en
+            un mismo proyecto. Crearemos grupos globales para los directores y participantes de cada proyecto, de forma
+            que nos sea más facil la clasificación en el futuro. Posteriormente crearemos otros 6 grupos locales que
+            coincidirán con los grupos globales y que serán a los que les apliquemos los permisos oportunos.
+          </p>
+          <p>
+            Lo primero será dirigirnos a <em><code>Usuarios y equipos</code></em>
+            <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Organización</code></em> y crear nuevo objeto de
+            grupo.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos.png" title="Crear nuevo grupo">
+          </div>
+          <p>
+            Debemos darle un nombre al nuevo grupo que vamos a crear. Una buena práctica es escribir el tipo de grupo al
+            principio del nombre para no liarnos cuando tengamos muchos grupos y saber cuál es cada uno. En este caso, crearemos
+            un grupo global de directores del proyecto aeropuerto <em><code>GG_director_aeropuerto</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos2.png" title="Crear nuevo grupo">
+          </div>
+          <p>
+            Hacemos lo mismo para los 6 grupos y nos debe quedar algo como esto:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos3.png" title="Crear grupos globales">
+          </div>
+          <p>
+            Por sí solo estos grupos no sirven para nada. Debemos llenarlos de usuarios. Por ejemplo, en el grupo de
+            directores de aeropuerto debemos incluir 3 empleados. Damos doble click en <em><code>GG_director_aeropuerto</code></em>,
+            vamos a la pestaña <em><code>Miembros</code></em> y agregamos los empleados oportunos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos4.png" title="Añadir empleados">
+          </div>
+          <p>
+            Una vez hemos llenado los 6 grupos con los usuarios correspondientes, debemos crearnos los grupos locales
+            que contendrán los permisos especificados en la prácitca. Hay que fijarse que esta vez, el ámbito de grupo
+            será de dominio local, no global.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos5.png" title="Crear grupos locales">
+          </div>
+          <p>
+            Si ya lo tenemos listo, nos debe quedar algo similar a esto:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos6.png" title="Grupos Globales (GG) y Locales (GL) creados">
+          </div>
+          <p>
+            Ahora debemos entrar en las propiedades de cada Grupo Local y agregar a los miembros (Grupos Globales) que nos
+            interesen. En nuestro caso los que tengan el mismo nombre, es decir, el miembro de
+            <em><code>GL_aeropuerto_CT</code></em> será <em><code>GG_director_aeropuerto</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos7.png" title="Crear nuevo grupo">
+          </div>
+          <p>
+            Ya tenemos todos los grupos correctamente creados pero no le hemos dado permisos a nadie. Debemos regresar al directorio
+            proyectos y agreagarle los grupos locales con sus correspondientes permisos, al igual que hicimos en el "Directorio
+            Privado de Usuarios" (<em><code>aeropuerto</code></em><img class="vrtcl" src="images/flecha-derecha-2.png">
+            <em><code>propiedades</code></em><img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Seguridad</code></em>
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Opciones avanzadas</code></em>
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Agregar permisos</code></em>).
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos8.png" title="Asignar grupos">
+          </div>
+          <p>
+            A los directores les daremos control total mientras que a los participantes sólo le daremos Lectura y escritura.
+            Pero como además nos dicen que los participantes no podrán crear ni borrar archivos, debemos separar los permisos
+            de lectura y escritura según si son para carpetas o para archivos: las carpetas no podrán ser escritas pero los
+            ficheros sí.
+          </p>
+          <p>
+            Para separar los permisos debemos seleccionar el grupo local que termina en lx y mostrar sus opciones avanzadas
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos9.png" title="Asignar grupos">
+          </div>
+          <p>
+            Duplicamos el permiso de GL_xxxx_LX
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos10.png" title="Asignar grupos">
+          </div>
+          <p>
+            Modificamos los permisos, de tal forma que uno se aplique a "esta carpeta y subcarpetas" (como en la imágen anterior)
+            y tenga las siguientes restricciones:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos11.png" title="Asignar grupos">
+          </div>
+          <p>
+            Y el otro se aplique a "solo archivos" y contenga:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos12.png" title="Asignar grupos">
+          </div>
+          <p>
+            Y con esto ya lo tenemos casi todo sobre los proyectos de la organización. Sólo nos falta un pequeño detalle,
+            y es que si intentamos acceder desde el cliente con algún empleado, a pesar de que ya tiene los permisos necesarios
+            para acceder a los proyectos en los que trabaja, no lo va a poder hacer porque no se los va a mostrar.
+          </p>
+          <p>
+            Para solventar esto, debemos volver a la carpeta de organización del directorio activo y decirle a cada empleado
+            que ejecute como script de inicio un archivo llamado <em><code>inicio.bat</code></em>, que por el momento no existe.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/ConectUsu.png" title="Asignar grupos">
+          </div>
+          <p>
+            Crearemos con un bloc de notas este archivo, que contendrá la siguiente información:
+            <pre><blockquote>net use p: \\ord06\proyectos\parque
+<!--                      -->net use p: \\ord06\proyectos\aeropuerto
+<!--                      -->net use p: \\ord06\proyectos\auditorio</blockquote></pre>
+            Y lo guardamos en <code>C:\Windows\SYSVOL\sysvol\as06\scripts</code>.
+          </p>
+          <p>
+            Con esto finalizamos este apartado. Para comprobar que todo está correcto podemos entrar en el cliente con un
+            usuario cualquiera y ver que efectivamente se montan los proyectos a los que el usuario tiene acceso
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos13.png" title="Asignar grupos">
+          </div>
+          <p>
+            Aquí entramos con el empleado 6 y vemos las carpetas parque, aeropuerto y auditorio porque si miramos en el pdf,
+            tiene acceso a las 3 como participante. Si entramos en una cualquiera, nos permite ver los archivos y modificarlos,
+            pero no podríamos crear nuevos.
+          </p>
         </p>
 
 
@@ -186,6 +364,7 @@
         </p>
 
 <!--BASURA-->
+        <pre>
           <code>Así entre tildes invertidas</code>
         </pre>
         <ul>
