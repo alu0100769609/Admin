@@ -613,9 +613,7 @@ strong {
 .wrapper {
   max-width: 650px;
   margin: 0 auto;
-  position: relative;
   padding: 0 20px;
-
 }
 
 .flecha{
@@ -631,6 +629,11 @@ strong {
     display:none;
     background:url(../images/subir30.png) no-repeat;
     cursor:pointer;
+}
+
+.menu {
+  float:left;
+  position:fixed;
 }
 
 .centrado {
@@ -731,7 +734,7 @@ dt {
   top: 0px;
   height: 60px;
   width: 100%;
-  position: fixed;
+  position: relative;
   background: url(../images/nav-bg.gif) #353535;
   border-bottom: 4px solid #434343;
   -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
@@ -815,8 +818,8 @@ section {
   max-width: 650px;
   padding: 30px 0px 50px 0px;
   margin: 20px 0;
-  margin-top: 70px;
 }
+
 section #title {
   border: 0;
   outline: none;
@@ -856,6 +859,12 @@ section #title .credits.right {
   float: right;
 }
 
+@media print, screen and (max-width: 1130px) {
+  .menu {
+    visibility:hidden;
+  }
+}
+
 @media print, screen and (max-width: 720px) {
   #title .credits {
     display: block;
@@ -872,13 +881,10 @@ section #title .credits.right {
     display: block;
   }
 }
+
 @media print, screen and (max-width: 480px) {
   #header {
     margin-top: -20px;
-  }
-
-  section {
-    margin-top: 40px;
   }
 
   nav {
