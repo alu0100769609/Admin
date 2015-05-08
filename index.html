@@ -350,8 +350,8 @@
           <p>
             Crearemos con un bloc de notas este archivo, que contendrá la siguiente información:
             <pre><blockquote>net use p: \\ord06\proyectos\parque
-<!--                      -->net use p: \\ord06\proyectos\aeropuerto
-<!--                      -->net use p: \\ord06\proyectos\auditorio</blockquote></pre>
+<!--                      -->net use q: \\ord06\proyectos\aeropuerto
+<!--                      -->net use r: \\ord06\proyectos\auditorio</blockquote></pre>
             Y lo guardamos en <code>C:\Windows\SYSVOL\sysvol\as06\scripts</code>.
           </p>
           <p>
@@ -400,10 +400,10 @@
           <div class="centrado">
             <img src="images/importantes/HraAcceso.png" title="Restringir horas de acceso">
           </div>
-          <p>
-            Lo siguiente será asignarle un perfil flotante a los empleados
-          </p>
         </p>
+
+
+<!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$FALTA EL PERFIL FLOTANTE$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
 
 <!--DIRECTORES DE LOS PROYECTOS-->
@@ -411,6 +411,33 @@
 
         <p>
           <h2>Directores de los proyectos</h2>
+          <p>
+            Para que los directores puedan leer los demás proyectos de la organización, tenemos que crear un grupo específico
+            para los directores.
+          </p>
+          <p>
+            Entramos en Usuarios y equipos <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos"> y nos dirigimos
+            a nuestra organización. En ella creamos un nuevo grupo que se llame <em><code>GL_directores</code></em> y añadimos
+            a los directores de todos los proyectos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/GL_directores.png" title="GL_directores">
+          </div>
+          <p>
+            De forma análoga, y por si nos pudiera servir en un futuro, creamos un <em><code>GL_empleados</code></em> en el que
+            metemos a todos los empleados de los proyectos
+          </p>
+          <p>
+            A continuación nos dirigimos a las carpetas de los proyectos y le damos permisos de lectura al grupo local de
+            directores en cada uno de los proyectos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/Permiso_GL_directores.png" title="Permiso de lectura a GL_directores">
+          </div>
+          <p>
+            El control total a los directores de cada proyecto se le asignó previamente en el apartado de PROYECTOS DE LA
+            ORGANIZACIÓN
+          </p>
         </p>
 
 
