@@ -1,0 +1,507 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Practica 3</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <script src="javascripts/funciones.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <div id="header"><!-- cabecera -->
+      <nav>
+        <li class="fork"><a href="pdf/practica3.pdf" target="_blank">Abrir PDF</a></li>
+        <li class="downloads"><a onclick="FuncNoDisp()">ZIP</a></li><!--<a href="https://github.com/alu0100769609/Admin/zipball/master">ZIP</a>-->
+        <li class="downloads"><a onclick="FuncNoDisp()">TAR</a></li><!--<a href="https://github.com/alu0100769609/Admin/tarball/master">TAR</a>-->
+        <li class="title">DOWNLOADS</li>
+      </nav>
+    </div><!-- fin cabecera -->
+    <!-- Índice -->
+    <div class="menu">
+      <ol>
+        <li><a href="#primeros-pasos">Primeros pasos</a></li>
+        <li><a href="#horas-acceso">Horas de acceso</a></li>
+        <li><a href="#contraseñas">Contraseñas</a></li>
+        <li><a href="#directorio-usuarios">Directorio privado de usuario</a></li>
+        <li><a href="#proyectos-organizacion">Proyectos de la organización</a></li>
+        <li><a href="#usuarios-organizacion">Usuarios de la organización</a></li>
+        <li><a href="#directores-proyectos">Directores de los proyectos</a></li>
+        <li><a href="#informacion-compartida">Información compartida</a></li>
+      </ol>
+    </div><!-- Fin de índice -->
+    <!-- Contenedor central -->
+    <div class="wrapper">
+      <section>
+        <div class="centrado">
+          <h1>Práctica 3 de Administración de Sistemas</h1>
+          <h3>Usuarios y protección en windows 2012</h3>
+        </div>
+        <hr>
+        <p class="centrado">
+          <img class="vrtcl" src="images/flecha-derecha.png" title="">
+          <a href="../Instalacion-Admin" target="_blank" title="Click here :D">Instalación y configuración previa a la práctica</a>
+          <img class="vrtcl" src="images/flecha-izquierda.png" title="">
+        </p>
+        <hr>
+        <p class="centrado"><a href="#final" title="Ir al final">Saltar al final de la página</a></p>
+
+
+<!--PRIMEROS PASOS-->
+<a name="primeros-pasos"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Primeros pasos</h2>
+          <p>
+            Antes de comenzar los apartados de la práctica será necesario que nos
+            creemos los usuarios del sistema. Para ello vamos a inicio (esquina inferior izquierda o tecla windows
+            <img class="vrtcl" src="images/inicio.png" title="Inicio">), y hacemos clic en
+            Usuarios y equipos <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">.
+            Expandimos <em><code>Usuarios y equipos de Active Directory</code></em>, botón derecho en el dominio (as06) y creamos una nueva
+            unidad organizativa. Esta se usará para guardar los usuarios.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/OU.png" title=" Creamos unidad organizativa">
+          </div>
+          <p>
+            A continuación entramos en la nueva unidad organizativa y creamos tantos usuarios como nos piden.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/crear-usuarios.png" title=" Creamos usuarios">
+          </div>
+        </p>
+
+
+<!--HORAS DE ACCESO-->
+<a name="horas-acceso"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Sistema: Restringir horas de acceso</h2>
+          <p>
+            Para restringir las horas de acceso a los usuarios vamos a inicio (esquina inferior izquierda o tecla windows
+            <img class="vrtcl" src="images/inicio.png" title="Inicio">), y hacemos clic en
+            Administrador de directivas <img class="vrtcl" src="images/btnAdD.png" title="Administrador de Directivas">.
+            Expandimos nuestro dominio y hacemos botón derecho en <em><code>Default domain policy</code></em> y editamos.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/AdD.png" title="Administrador de Directivas">
+          </div>
+          <p>
+            A continuación, en la nueva ventana vamos a <em><code>Directivas</code><img class="vrtcl" src="images/flecha-derecha-2.png">
+            </em><em><code>Configuración de windows</code></em><img class="vrtcl" src="images/flecha-derecha-2.png">
+            <em><code>Configuración de seguridad</code></em><img class="vrtcl" src="images/flecha-derecha-2.png">
+            <em><code>Directivas de kerberos</code></em>, y ahí habilitamos las restricciones de inicio de sesión si no lo están
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/EdD.png" title="Editor de Directivas">
+          </div>
+        </p>
+
+<!--CONTRASEÑAS-->
+<a name="contraseñas"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Contraseñas</h2>
+          <p>
+            Para las contraseñas, tuvimos que haberle asignado al principio una a cada usuario y ésta debía ser su nombre de usuario.
+            Ahora debemos especificar cómo deben ser las contraseñas y cada cuánto tiempo deben cambiar para que sea él mismo
+            el que la cambie periódicamente.
+          </p>
+          <p>
+            Nos dirigimos a Directivas de contraseña y cambiamos la longitud mínima de la contraseña, ponemos 90 días de vigencia
+            máxima de la contraseña y 14 días mínima. Desmarcamos los requisitos de complejidad y exigimos un historial de 2 contraseñas,
+            para que el usuario esté obligado a cambiar a un mínimo de 3 contraseñas diferentes.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/DdC.png" title="Directivas de contraseña">
+          </div>
+          <p>
+            Por último si el usuario se equivoca 4 veces seguidas en la contraseña en un intervalo de 10 minutos, se la bloqueamos
+            permanentemente. Para ello nos dirigimos a directivas de bloqueo de contraseña (debajo de directivas de contraseña) y
+            le asignamos una duración de bloqueo de cuenta de "0" para que se quede bloqueada permanente, una duración de bloqueo
+            después de "10 minutos" y el umbral de bloqueo de cuenta lo ponemos a 4 intentos.
+            <div class="centrado">
+              <img src="images/importantes/DdBdC.png" title="Directivas de bloqueo de cuenta">
+            </div>
+          </p>
+        </p>
+
+
+<!--DIRECTORIO PRIVADO DE USUARIO-->
+<a name="directorio-usuarios"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Directorio privado de usuario</h2>
+          <p>
+            Ahora tenemos que crear los directorios de nuestros usuarios en el servidor, en una carpeta /home que crearemos en
+            el disco c. A continuación botón derecho el la carpeta, <em><code>Propiedades</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CreaHome.png" title="Creamos el directorio /home">
+          </div>
+          <p>
+            Vamos a la pestaña <em><code>Compartir</code></em> y pulsamos en <em><code>Compartir...</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompHome.png" title="Compartir el directorio /home">
+          </div>
+          <p>
+            En la ventana nueva que se nos abre no tocamos nada, simplemente pinchamos <em><code>Compartir</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompHome2.png" title="Compartir el directorio /home">
+          </div>
+          <p>
+            Listo. Ahora sólo debemos ir a la pestaña de seguridad y pinchar en <em><code>Editar...</code></em> para agregar
+            a los empleados <em><code>(Usuarios del dominio)</code></em> y que ellos puedan acceder a la carpeta /home
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompSegu.png" title="Seguridad /home">
+          </div>
+          <p>
+            Por último debemos decirle a cada usuario que debe conectarse a esa carpeta. Para ello volvemos a
+            <em><code>Usuarios y equipos</code></em><img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Organización</code></em> y damos doble clic en cada
+            empleado <img class="vrtcl" src="images/flecha-derecha-2.png"> <em><code>perfil</em></code> <img class="vrtcl" src="images/flecha-derecha-2.png">
+            <em><code>conectar a N en \\ORD06\home\%username%</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/ConectUsu.png" title="Conectar a \\ORD06\home\%username%">
+          </div>
+          <p>
+            Ahora podemos iniciar una sesión en el ordenador cliente y comprobar que todo funciona correctamente.
+          </p>
+        </p>
+
+
+<!--PROYECTOS DE LA ORGANIZACIÓN-->
+<a name="proyectos-organizacion"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Proyectos de la organización</h2>
+          <p>
+            Para los proyectos de la organización crearemos una carpeta dentrod el disco c llamada <em><code>proyectos</code></em>
+            y la compartiremos igual que como compartimos la carpeta <em><code>/home</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearProy.png" title="Crear la carpeta de proyecto">
+          </div>
+          <p>
+            Vamos a la pestaña <em><code>Compartir</code></em> y pulsamos en <em><code>Compartir...</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompProy.png" title="Compartir el directorio /proyectos">
+          </div>
+          <p>
+            En la ventana nueva que se nos abre no tocamos nada, simplemente pinchamos <em><code>Compartir</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CompHome2.png" title="Compartir el directorio /proyectos">
+          </div>
+          <p>
+            Sin cerrar las propiedades, vamos a seguridad y agregamos los "usuarios del dominio"
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/SeguProy.png" title="Seguridad">
+          </div>
+          <p>
+            Pero com debe aplicarse únicamente a esta carpeta, editamos "usuarios del dominio" y se lo especificamos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/SeguProy2.png" title="Opciones avanzadas">
+          </div>
+          <p>
+            Aplicamos únicamente a esta carpeta y aceptamos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/SeguProy3.png" title="Editar permisos">
+          </div>
+          <p>
+            Ahora ya tenemos creada y compartida nuestra carpeta de proyectos, pero tenemos que crear los proyectos.
+            Creamos 3 subcarpetas dentro de <em><code>/proyectos</code></em>: <em><code>auditorio</code></em>,
+            <em><code>aeropuerto</code></em>y<em><code>parque</code></em>. Por el momento no las compartiremos, porque
+            ahora no queremos que todos los usuarios puedan acceder a la carpeta, sólo los que trabajen en dicho proyecto.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/3proyectos.png" title="Creamos las 3 carpetas de proyectos">
+          </div>
+          <p>
+            Para conseguirlo, primero debemos crear grupos de proyectos que engloben a todos los empleados que trabajan en
+            un mismo proyecto. Crearemos grupos globales para los directores y participantes de cada proyecto, de forma
+            que nos sea más facil la clasificación en el futuro. Posteriormente crearemos otros 6 grupos locales que
+            coincidirán con los grupos globales y que serán a los que les apliquemos los permisos oportunos.
+          </p>
+          <p>
+            Lo primero será dirigirnos a <em><code>Usuarios y equipos</code></em>
+            <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos">
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Organización</code></em> y crear nuevo objeto de
+            grupo.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos.png" title="Crear nuevo grupo">
+          </div>
+          <p>
+            Debemos darle un nombre al nuevo grupo que vamos a crear. Una buena práctica es escribir el tipo de grupo al
+            principio del nombre para no liarnos cuando tengamos muchos grupos y saber cuál es cada uno. En este caso, crearemos
+            un grupo global de directores del proyecto aeropuerto <em><code>GG_director_aeropuerto</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos2.png" title="Crear nuevo grupo">
+          </div>
+          <p>
+            Hacemos lo mismo para los 6 grupos y nos debe quedar algo como esto:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos3.png" title="Crear grupos globales">
+          </div>
+          <p>
+            Por sí solo estos grupos no sirven para nada. Debemos llenarlos de usuarios. Por ejemplo, en el grupo de
+            directores de aeropuerto debemos incluir 3 empleados. Damos doble click en <em><code>GG_director_aeropuerto</code></em>,
+            vamos a la pestaña <em><code>Miembros</code></em> y agregamos los empleados oportunos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos4.png" title="Añadir empleados">
+          </div>
+          <p>
+            Una vez hemos llenado los 6 grupos con los usuarios correspondientes, debemos crearnos los grupos locales
+            que contendrán los permisos especificados en la prácitca. Hay que fijarse que esta vez, el ámbito de grupo
+            será de dominio local, no global.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos5.png" title="Crear grupos locales">
+          </div>
+          <p>
+            Si ya lo tenemos listo, nos debe quedar algo similar a esto:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos6.png" title="Grupos Globales (GG) y Locales (GL) creados">
+          </div>
+          <p>
+            Ahora debemos entrar en las propiedades de cada Grupo Local y agregar a los miembros (Grupos Globales) que nos
+            interesen. En nuestro caso los que tengan el mismo nombre, es decir, el miembro de
+            <em><code>GL_aeropuerto_CT</code></em> será <em><code>GG_director_aeropuerto</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos7.png" title="Crear nuevo grupo">
+          </div>
+          <p>
+            Ya tenemos todos los grupos correctamente creados pero no le hemos dado permisos a nadie. Debemos regresar al directorio
+            proyectos y agreagarle los grupos locales con sus correspondientes permisos, al igual que hicimos en el "Directorio
+            Privado de Usuarios" (<em><code>aeropuerto</code></em><img class="vrtcl" src="images/flecha-derecha-2.png">
+            <em><code>propiedades</code></em><img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Seguridad</code></em>
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Opciones avanzadas</code></em>
+            <img class="vrtcl" src="images/flecha-derecha-2.png"><em><code>Agregar permisos</code></em>).
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos8.png" title="Asignar grupos">
+          </div>
+          <p>
+            A los directores les daremos control total mientras que a los participantes sólo le daremos Lectura y escritura.
+            Pero como además nos dicen que los participantes no podrán crear ni borrar archivos, debemos separar los permisos
+            de lectura y escritura según si son para carpetas o para archivos: las carpetas no podrán ser escritas pero los
+            ficheros sí.
+          </p>
+          <p>
+            Para separar los permisos debemos seleccionar el grupo local que termina en lx y mostrar sus opciones avanzadas
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos9.png" title="Asignar grupos">
+          </div>
+          <p>
+            Duplicamos el permiso de GL_xxxx_LX
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos10.png" title="Asignar grupos">
+          </div>
+          <p>
+            Modificamos los permisos, de tal forma que uno se aplique a "esta carpeta y subcarpetas" (como en la imágen anterior)
+            y tenga las siguientes restricciones:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos11.png" title="Asignar grupos">
+          </div>
+          <p>
+            Y el otro se aplique a "solo archivos" y contenga:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos12.png" title="Asignar grupos">
+          </div>
+          <p>
+            Y con esto ya lo tenemos casi todo sobre los proyectos de la organización. Sólo nos falta un pequeño detalle,
+            y es que si intentamos acceder desde el cliente con algún empleado, a pesar de que ya tiene los permisos necesarios
+            para acceder a los proyectos en los que trabaja, no lo va a poder hacer porque no se los va a mostrar.
+          </p>
+          <p>
+            Para solventar esto, debemos volver a la carpeta de organización del directorio activo y decirle a cada empleado
+            que ejecute como script de inicio un archivo llamado <em><code>inicio.bat</code></em>, que por el momento no existe.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/ConectUsu.png" title="Asignar grupos">
+          </div>
+          <p>
+            Crearemos con un bloc de notas este archivo, que contendrá la siguiente información:
+            <pre><blockquote>net use p: \\ord06\proyectos\parque
+<!--                      -->net use q: \\ord06\proyectos\aeropuerto
+<!--                      -->net use r: \\ord06\proyectos\auditorio</blockquote></pre>
+            Y lo guardamos en <code>C:\Windows\SYSVOL\sysvol\as06\scripts</code>.
+          </p>
+          <p>
+            Con esto finalizamos este apartado. Para comprobar que todo está correcto podemos entrar en el cliente con un
+            usuario cualquiera y ver que efectivamente se montan los proyectos a los que el usuario tiene acceso
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/CrearGrupos13.png" title="Asignar grupos">
+          </div>
+          <p>
+            Aquí entramos con el empleado 6 y vemos las carpetas parque, aeropuerto y auditorio porque si miramos en el pdf,
+            tiene acceso a las 3 como participante. Si entramos en una cualquiera, nos permite ver los archivos y modificarlos,
+            pero no podríamos crear nuevos.
+          </p>
+        </p>
+
+
+<!--USUARIOS DE LA ORGANIZACIÓN-->
+<a name="usuarios-organizacion"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Usuarios de la organización</h2>
+          <p>
+            A los usuarios de la organización implicados en los proyectos debemos restringirle la hora de acceso al sistema,
+            sabiendo que desde emple1 hasta emple5 trabajan en el turno de mañana (de 8:00 a 15:00) y los otros 5 en el turno
+            de tarde (14:00 a 21:00). Además nos dicen que los empleados 1, 3 y 5 son contratados temporalmente, así que debemos
+            restringirles el acceso a la cuenta pasado el tiempo del contrato (6 meses).
+          </p>
+          <p>
+            Nos dirigimos a <em><code>Usuarios y Equipos de Active Directory</code></em>
+            <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos"> y hacemos doble clic en cada empleado. Nos
+            aparecerá una ventana en la que debemos cambiar a la pestaña <em><code>Cuenta</code></em>
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/Empleado.png" title="">
+          </div>
+          <p>
+            Debemos tener en cuenta que dependiendo del empleado, tendrá unas características u otras, por ejemplo, el emple1
+            que es el que aparece en la imágen anterior, tiene un contrato de 6 meses y hay que definirlo en el apartado de
+            <em><code>La cuenta expira:</code></em> tal y como se encuentra en la foto.
+          </p>
+          <p>
+            Una vez hecho esto, seleccionamos <em><code>Horas de inicio de sesión</code></em> y se nos abrirá otra ventana
+            en la que indicaremos el horario de acceso del empleado. En este caso, laborables de 8:00 a 15:00.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/HraAcceso.png" title="Restringir horas de acceso">
+          </div>
+        </p>
+
+
+<!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$FALTA EL PERFIL FLOTANTE$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+
+<!--DIRECTORES DE LOS PROYECTOS-->
+<a name="directores-proyectos"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Directores de los proyectos</h2>
+          <p>
+            Para que los directores puedan leer los demás proyectos de la organización, tenemos que crear un grupo específico
+            para los directores.
+          </p>
+          <p>
+            Entramos en Usuarios y equipos <img class="vrtcl" src="images/UyE.png" title="Usuarios y equipos"> y nos dirigimos
+            a nuestra organización. En ella creamos un nuevo grupo que se llame <em><code>GL_directores</code></em> y añadimos
+            a los directores de todos los proyectos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/GL_directores.png" title="GL_directores">
+          </div>
+          <p>
+            De forma análoga, y por si nos pudiera servir en un futuro, creamos un <em><code>GL_empleados</code></em> en el que
+            metemos a todos los empleados de los proyectos
+          </p>
+          <p>
+            A continuación nos dirigimos a las carpetas de los proyectos y le damos permisos de lectura al grupo local de
+            directores en cada uno de los proyectos
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/Permiso_GL_directores.png" title="Permiso de lectura a GL_directores">
+          </div>
+          <p>
+            El control total a los directores de cada proyecto se le asignó previamente en el apartado de PROYECTOS DE LA
+            ORGANIZACIÓN
+          </p>
+        </p>
+
+
+<!--INFORMACIÓN COMPARTIDA-->
+<a name="informacion-compartida"></a> <!-- Etiqueta para saltar-->
+
+        <p>
+          <h2>Información compartida</h2>
+          <p>
+            Para este último apartado, creamos dos carpetas en <em><code>C:\info</code></em> llamadas <em><code>privado</code></em>
+            y <em><code>pub</code></em> que tendrán información compartida para los directores y empleados respectivamente. En
+            estas carpetas los usuarios podrán leer y modificar los archivos allí presentes, así como crear otros nuevos. Esto
+            es, en definitiva, control total sobre la carpeta.
+          </p>
+          <p>
+            Lo primero será crear las dos carpetas en el directorio especificado y compartirlas
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/Compartir_privado_pub.png" title="Compartimos \privado y \pub">
+          </div>
+          <p>
+            Lo siguiente será ir a las propiedades de la carpeta, pestaña <em><code>Seguridad</code></em> y añadir con control
+            total a <em><code>GL_directores</code></em> o <em><code>GL_empleados</code></em> según editemos
+            <em><code>\privado</code></em> o <em><code>\pub</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/Compartir_privado_pub2.png" title="Control total a los directores">
+          </div>
+          <p>
+            Una vez tenemos compartidas las carpetas, tenemos que montarlas en los equipos de los empleados, de tal forma
+            que si son directores se les montará <em><code>\info\privado</code></em> y si no son empleados se les montará
+            <em><code>\info\pub</code></em>. Esto se hace editando el fichero <em><code>inicio.bat</code></em> que creamos
+            anteriormente en <em><code>C:\Windows\SYSVOL\sysvol\as06.org\scripts</code></em>. Hacemos clic con el botón
+            derecho en <em><code>inicio</code></em> vamos a editar y añadimos las siguientes líneas:
+          </p>
+          <pre><blockquote>net use s: \\ord06\info\privado
+<!--                    -->net use t: \\ord06\info\pub</blockquote></pre>
+          <p>
+            Nos quedará algo como lo siguiente:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/inicio_s_t.png" title="">
+          </div>
+          <p>
+            Para comprobar que todo ha salido correctamente podemos entrar con un empleado cualquiera y comprobar si se le
+            ha montado correctamente la carpeta.
+          </p>
+        </p>
+
+<!-- Pie de página -->
+        <p class="centrado"><a href="#" title="Volver arriba">Volver al principio</a></p>
+        <hr>
+        <div id="title">
+          <span class="credits left">Project maintained by <a href="https://github.com/alu0100769609">alu0100769609</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+      </section>
+      <div class="flecha">
+        <a onClick="arriba();" class="arrowtop"></a>
+      </div>
+    </div>
+    <!-- Fin del contenedor central -->
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <a name="final"></a><!-- Etiqueta de final de página-->
+
+  </body>
+</html>
