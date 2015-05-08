@@ -446,6 +446,45 @@
 
         <p>
           <h2>Información compartida</h2>
+          <p>
+            Para este último apartado, creamos dos carpetas en <em><code>C:\info</code></em> llamadas <em><code>privado</code></em>
+            y <em><code>pub</code></em> que tendrán información compartida para los directores y empleados respectivamente. En
+            estas carpetas los usuarios podrán leer y modificar los archivos allí presentes, así como crear otros nuevos. Esto
+            es, en definitiva, control total sobre la carpeta.
+          </p>
+          <p>
+            Lo primero será crear las dos carpetas en el directorio especificado y compartirlas
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/Compartir_privado_pub.png" title="Compartimos \privado y \pub">
+          </div>
+          <p>
+            Lo siguiente será ir a las propiedades de la carpeta, pestaña <em><code>Seguridad</code></em> y añadir con control
+            total a <em><code>GL_directores</code></em> o <em><code>GL_empleados</code></em> según editemos
+            <em><code>\privado</code></em> o <em><code>\pub</code></em>.
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/Compartir_privado_pub2.png" title="Control total a los directores">
+          </div>
+          <p>
+            Una vez tenemos compartidas las carpetas, tenemos que montarlas en los equipos de los empleados, de tal forma
+            que si son directores se les montará <em><code>\info\privado</code></em> y si no son empleados se les montará
+            <em><code>\info\pub</code></em>. Esto se hace editando el fichero <em><code>inicio.bat</code></em> que creamos
+            anteriormente en <em><code>C:\Windows\SYSVOL\sysvol\as06.org\scripts</code></em>. Hacemos clic con el botón
+            derecho en <em><code>inicio</code></em> vamos a editar y añadimos las siguientes líneas:
+          </p>
+          <pre><blockquote>net use s: \\ord06\info\privado
+<!--                    -->net use t: \\ord06\info\pub</blockquote></pre>
+          <p>
+            Nos quedará algo como lo siguiente:
+          </p>
+          <div class="centrado">
+            <img src="images/importantes/inicio_s_t.png" title="">
+          </div>
+          <p>
+            Para comprobar que todo ha salido correctamente podemos entrar con un empleado cualquiera y comprobar si se le
+            ha montado correctamente la carpeta.
+          </p>
         </p>
 
 <!--BASURA-->
